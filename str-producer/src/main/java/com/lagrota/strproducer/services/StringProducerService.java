@@ -13,6 +13,8 @@ public class StringProducerService {
     private final KafkaTemplate<String, String> kafkaTemplate;
 
     public void sendMessage(String message) {
+
+        log.info("Iniciando envio da mensagem: {}", message);
         kafkaTemplate.send(
                 "str-topic", // Nome do tópico
                 message
